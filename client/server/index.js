@@ -6,9 +6,7 @@ const app = express();
 const studentRoutes = require("./routes/studentRoutes");
 
 // MongoDB Connection
-mongoose.connect(
-  "mongodb://ishika27parmar_db_user:ishika27@ac-irqnn9p-shard-00-00.xfrzo53.mongodb.net:27017,ac-irqnn9p-shard-00-01.xfrzo53.mongodb.net:27017,ac-irqnn9p-shard-00-02.xfrzo53.mongodb.net:27017/?ssl=true&replicaSet=atlas-tmaxnm-shard-0&authSource=admin&appName=Cluster0"
-)
+mongoose.connect(process.env.MONGODB_URI)
 .then(() => {
   console.log("MongoDB Connected ✅");
 })
